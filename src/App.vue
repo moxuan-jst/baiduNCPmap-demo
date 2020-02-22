@@ -1,13 +1,20 @@
 <template>
   <div id="app">
     <Header/>
-    <HelloWorld/>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+          <HelloWorld/>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/Header.vue'
+
 
 export default {
   name: 'App',
@@ -19,5 +26,7 @@ export default {
 </script>
 
 <style>
-
+#app{
+  background-color: #2486b9;
+}
 </style>

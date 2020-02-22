@@ -13,6 +13,10 @@ npm run serve
 
 ## 搭建日志
 
+#### 2020-02-22
+
+1. 使用bootstrap库美化Header
+
 #### 2020-02-17
 
 1. 采用@vue/cli创建项目

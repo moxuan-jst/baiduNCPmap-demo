@@ -18,9 +18,11 @@
     "@vue/cli-plugin-eslint": "~4.2.0",
     "@vue/cli-service": "~4.2.0",
     "babel-eslint": "^10.0.3",
+    "bootstrap": "^3.4.1",
     "echarts": "^4.6.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
+    "vue-cli-plugin-bootstrap": "~1.0.0-alpha.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
