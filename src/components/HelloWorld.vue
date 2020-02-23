@@ -10,8 +10,8 @@
 
 <script>
 import echarts from "echarts";
-import CHeader from "./CHeader.vue"
-import MHeader from "./MHeader.vue"
+import CHeader from "./Header/CHeader.vue"
+import MHeader from "./Header/MHeader.vue"
 
 import "../..//node_modules/echarts/map/js/china.js";
 
