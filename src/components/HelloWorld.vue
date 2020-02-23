@@ -1,8 +1,7 @@
 <template>
   <div class="container">
-    <div class="left">
-      墨轩blog
-    </div>
+    <c-header/>
+    <m-header />
     <div class="hello">
       <div ref="charts" style="width: 800px;height:800px;"></div>
     </div>
@@ -11,6 +10,8 @@
 
 <script>
 import echarts from "echarts";
+import CHeader from "./CHeader.vue"
+import MHeader from "./MHeader.vue"
 
 import "../..//node_modules/echarts/map/js/china.js";
 
@@ -92,6 +93,10 @@ export default {
     this.getData();
     this.myCharts = echarts.init(this.$refs.charts);
     this.myCharts.setOption(option);
+  },
+  components: {
+    CHeader,
+    MHeader
   }
 };
 </script>

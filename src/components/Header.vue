@@ -18,17 +18,16 @@ export default {};
 .header .left,
 .header .right{
   position: relative;
-  font-size:25px; 
+  font-size:17px; 
   text-decoration:none;
-  text-align: center;
   line-height: 50px;
-  color: #2486b9;
+  color: #000;
 }
 .header .left{
   left: 5%;
 }
 
 .header .right{
-  left: 85%;
+  left: 90%;
 }
 </style>
