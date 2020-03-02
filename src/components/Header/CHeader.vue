@@ -11,13 +11,17 @@
         </button>
       </div>
     </div>
+    <div class="city">
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   methods: {
-    choosecity() {}
+    choosecity() {
+      console.log(1)
+    }
   }
 };
 </script>
