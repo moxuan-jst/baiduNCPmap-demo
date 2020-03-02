@@ -13,6 +13,10 @@ npm run serve
 
 ## 搭建日志
 
+#### 2020-03-02
+
+1. 完成fixed-header布局
+
 #### 2020-02-22
 
 1. 使用bootstrap库美化Header
