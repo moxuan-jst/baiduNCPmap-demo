@@ -1,8 +1,10 @@
 <template>
   <div class="container">
     <div class="row">
-      <c-header />
-      <m-header />
+      <div class="col-md-8">
+        <c-header />
+        <m-header />
+      </div>
       <div class="img-rounded col-md-8">
         <div class="table">
           <ul class="table-header">
@@ -59,6 +61,12 @@
             </tr>
           </table>
         </div>
+        <div class="nav clo-md-6">
+          <ul>
+            <li class="nav-activate"><a href="#">现有确诊</a></li>
+            <li><a href="#">累计确诊</a></li>
+          </ul>
+        </div>
         <div class="echart">
           <div ref="charts" style="width: 760px;height:760px;"></div>
         </div>
@@ -77,7 +85,9 @@ import "../..//node_modules/echarts/map/js/china.js";
 let option = {
   title: {
     subtext: "数据来源自CSDN-DengZY926",
-    sublink: "http://www.dzyong.top:3005/yiqing/total"
+    sublink: "http://www.dzyong.top:3005/yiqing/total",
+    left: "center",
+    top: 20
   },
   series: [
     {
@@ -201,13 +211,13 @@ export default {
   /* background-color: red; */
 }
 .table-content .th-l {
-  color: #b0d5df;
+  color: #cdd1d3;
   width: 200px;
 
   /* background-color: red; */
 }
 .table-content .th-r {
-  color: #b0d5df;
+  color: #cdd1d3;
 
   /* background-color: red; */
 }
@@ -228,6 +238,42 @@ export default {
 }
 
 /* table-end */
+
+/* nav-start */
+.nav {
+  /* width: 500px; */
+  /* background-color: red; */
+  height: 35px;
+}
+.nav ul {
+  margin: 0;  
+  padding: 0;
+  list-style: none;
+  background-color: #baccd9;
+  border-radius: 10px;
+  border: 2px solid #baccd9;
+}
+.nav li {
+  display: inline-block;
+  text-align: center;
+  line-height: 35px;
+  /* margin-left: 80px; */
+  margin-right: 140px;
+  /* background-color: green; */
+}
+.nav li a {
+  text-decoration: none;
+  font-size: 19px;
+  font-family: "Microsoft YaHei", Courier, monospace;
+  color: black;
+}
+.nav-activate {
+  background-color: #fff;
+  border-radius: 7px;
+  width: 50%;
+}
+/* nav-end */
+
 
 /* echart-start */
 
