@@ -94,7 +94,7 @@ import "../..//node_modules/echarts/map/js/china.js";
 let option = {
   title: {
     subtext: "数据来源自CSDN-DengZY926",
-    sublink: "http://www.dzyong.top:3005/yiqing/total",
+    sublink: "http://www.dzyong.top/read/123",
     left: "center",
     top: 20
   },
