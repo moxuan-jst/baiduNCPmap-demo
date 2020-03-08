@@ -21,6 +21,8 @@ npm run serve
 
 3. 添加tip
 
+4. 添加顶部动态nav
+
 #### 2020-03-02
 
 1. 完成fixed-header布局
