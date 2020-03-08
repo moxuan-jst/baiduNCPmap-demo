@@ -8,19 +8,23 @@
         </div>
       </div>
     </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/Header/Header.vue'
+import Footer from "./components/footer/Footer.vue"
+
 import 'bootstrap/dist/css/bootstrap.css'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    Header
+    Header,
+    Footer
   }
 }
 </script>
