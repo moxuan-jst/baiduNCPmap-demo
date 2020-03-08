@@ -71,6 +71,12 @@
           <div ref="charts" style="width: 760px;height:760px;"></div>
         </div>
       </div>
+      <div class="img-rounded col-md-8 map-footer">
+        <map-footer/>
+      </div>
+      <div class="col-md-8">
+        <Tip/>
+      </div>
     </div>
   </div>
 </template>
@@ -79,6 +85,9 @@
 import echarts from "echarts";
 import CHeader from "./Header/CHeader.vue";
 import MHeader from "./Header/MHeader.vue";
+import MapFooter from "./MapFooter.vue";
+import Tip from "./footer/Tip.vue"
+
 
 import "../..//node_modules/echarts/map/js/china.js";
 
@@ -163,7 +172,9 @@ export default {
   },
   components: {
     CHeader,
-    MHeader
+    MHeader,
+    MapFooter,
+    Tip
   }
 };
 </script>
@@ -275,7 +286,9 @@ export default {
 /* nav-end */
 
 
-/* echart-start */
-
-/* echart-end */
+/* footer-start */
+.map-footer{
+  margin-top: 20px;
+}
+/* footer-end */
 </style>
