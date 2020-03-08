@@ -13,6 +13,14 @@ npm run serve
 
 ## 搭建日志
 
+#### 2020-03-08
+
+1. 添加地图footer
+
+2. 添加footer
+
+3. 添加tip
+
 #### 2020-03-02
 
 1. 完成fixed-header布局
