@@ -84,4 +84,4 @@ pro_City[35] = '其它';
 //   showCity.innerText = document.all("province")[document.all("province").selectedIndex].innerText + ':' + document.all("city")[document.all("city").selectedIndex].innerText;
 // }
 
-export default {pro_City, province}
+export {pro_City, province};
