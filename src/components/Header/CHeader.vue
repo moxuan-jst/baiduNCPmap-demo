@@ -17,11 +17,22 @@
 </template>
 
 <script>
+import {pro_City, province} from "../../assets/city.js"
+
 export default {
+  data(){
+    return{
+      pro_City,
+      province
+    }
+  },
   methods: {
     choosecity() {
       console.log(1)
     }
+  },
+  components:{
+    
   }
 };
 </script>
