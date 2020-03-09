@@ -22,7 +22,7 @@
             </li>
           </ul>
           <table class="table-content">
-            <th class="th-l">更新至 2020.03.02 14:18</th>
+            <th class="th-l">更新至 {{date}}</th>
             <th></th>
             <th class="th-r text-right"><i class="glyphicon glyphicon-globe"></i>数据说明</th>
             <tr class="tr">
@@ -33,7 +33,7 @@
               </td>
               <td class="td">
                 <p class="text-center">现有疑似<i class="glyphicon glyphicon-globe"></i></p>
-                <h3 class="text-center" style="color: #b78b26">32700</h3>
+                <h3 class="text-center" style="color: #b78b26">{{suspect}}</h3>
                 <p class="text-center small">昨日<span>-2679</span></p>
               </td>
               <td class="td">
@@ -45,26 +45,26 @@
             <tr class="tr">
               <td class="td">
                 <p class="text-center">累计确诊</p>
-                <h3 class="text-center" style="color: #de1c31">32700</h3>
-                <p class="text-center small">昨日<span>-2679</span></p>
+                <h3 class="text-center" style="color: #de1c31">{{diagnosed}}</h3>
+                <p class="text-center small">昨日<span>{{yestaday.diagnosed}}</span></p>
               </td>
              <td class="td">
                 <p class="text-center">累计治愈</p>
-                <h3 class="text-center" style="color: #5698c3">32700</h3>
-                <p class="text-center small">昨日<span>-2679</span></p>
+                <h3 class="text-center" style="color: #5698c3">{{cured}}</h3>
+                <p class="text-center small">昨日<span>{{yestaday.cured}}</span></p>
               </td>
               <td class="td">
                 <p class="text-center">累计死亡</p>
-                <h3 class="text-center" style="color: #000">32700</h3>
-                <p class="text-center small">昨日<span>-2679</span></p>
+                <h3 class="text-center" style="color: #000">{{death}}</h3>
+                <p class="text-center small">昨日<span>{{yestaday.death}}</span></p>
               </td>
             </tr>
           </table>
         </div>
         <div class="nav clo-md-6">
           <ul>
-            <li class="nav-activate"><a href="#">现有确诊</a></li>
-            <li><a href="#">累计确诊</a></li>
+            <li class="nav-activate"><a href="#">累计确诊</a></li>
+            <li><a href="#">现有确诊</a></li>
           </ul>
         </div>
         <div class="echart">
@@ -87,6 +87,7 @@ import CHeader from "./Header/CHeader.vue";
 import MHeader from "./Header/MHeader.vue";
 import MapFooter from "./MapFooter.vue";
 import Tip from "./footer/Tip.vue"
+
 
 
 import "../..//node_modules/echarts/map/js/china.js";
@@ -149,12 +150,41 @@ let option = {
 
 export default {
   name: "HelloWorld",
+  created(){
+    this.axios.get("http://www.dzyong.top:3005/yiqing/total").then(datas=>{
+      this.diagnosed = datas.data.data[0].diagnosed;
+      this.death = datas.data.data[0].death;
+      this.cured = datas.data.data[0].cured;
+      this.date = datas.data.data[0].date;
+      this.suspect = datas.data.data[0].suspect;
+    })
+    
+    this.axios.get("http://www.dzyong.top:3005/yiqing/history").then(datas=>{
+      this.yestaday.diagnosed = this.diagnosed - datas.data.data[54].confirmedNum
+      this.yestaday.cured = this.cured - datas.data.data[54].curesNum
+      this.yestaday.death =this.death - datas.data.data[54].deathsNum
+    })
+  },
+  data(){
+    return{
+      diagnosed: 0,
+      suspect:0,
+      death:0,
+      cured:0,
+      date:"2020-03-09 21:00:13",
+      yestaday: {
+        diagnosed: 0,
+        death:0,
+        cured:0
+      }
+    }
+  },
   methods: {
     getData() {
       var url = "http://www.dzyong.top:3005/yiqing/province";
       this.axios.get(url).then(data => {
         let chartData = data.data.data;
-        console.log(chartData);
+        // console.log(chartData);
         let list = chartData.map(val => ({
           name: val.provinceName,
           value: val.confirmedNum
